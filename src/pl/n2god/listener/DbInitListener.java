@@ -8,10 +8,6 @@ import pl.n2god.db.DbUtil;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
-import javax.servlet.http.HttpSessionAttributeListener;
-import javax.servlet.http.HttpSessionEvent;
-import javax.servlet.http.HttpSessionListener;
-import javax.servlet.http.HttpSessionBindingEvent;
 import java.sql.SQLException;
 
 @WebListener()
@@ -35,6 +31,7 @@ public class DbInitListener implements ServletContextListener {
 	}
 	@Override
 	public void contextDestroyed(ServletContextEvent sce) {
+		DbUtil.getInstance().close();
 		System.out.println("Context Destroyed");
 	}
 
