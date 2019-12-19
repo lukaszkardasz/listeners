@@ -52,20 +52,14 @@ public class AttributeListener implements ServletContextListener,
 	// -------------------------------------------------------
 
 	public void attributeAdded(HttpSessionBindingEvent sbe) {
-      /* This method is called when an attribute 
-         is added to a session.
-      */
+		System.out.println("Request attribute added " + sbe.getName());
 	}
 
 	public void attributeRemoved(HttpSessionBindingEvent sbe) {
-      /* This method is called when an attribute
-         is removed from a session.
-      */
+		System.out.println("Request attribute removed " + sbe.getName());
 	}
 
 	public void attributeReplaced(HttpSessionBindingEvent sbe) {
-      /* This method is invoked when an attribute
-         is replaced in a session.
-      */
+		System.out.println("Request attribute replaced " + sbe.getName());
 	}
 }
